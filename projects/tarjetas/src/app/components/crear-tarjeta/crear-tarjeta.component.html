@@ -1,0 +1,66 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="titulo">CREAR TARJETA</h5>
+
+    <form [formGroup]="form" (ngSubmit)="crearTarjeta()">
+
+      <div class="input-group mb-3">
+        <svg [class.green-icon]="this.form.get('titular')?.valid"
+             [class.red-icon]="this.form.get('titular')?.invalid &&
+              this.form.get('titular')?.touched"
+          class="input-group-text svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path
+            d="M399 384.2C376.9 345.8 335.4 320 288 320H224c-47.4 0-88.9 25.8-111 64.2c35.2 39.2 86.2 63.8 143 63.8s107.8-24.7 143-63.8zM512 256c0 141.4-114.6 256-256 256S0 397.4 0 256S114.6 0 256 0S512 114.6 512 256zM256 272c39.8 0 72-32.2 72-72s-32.2-72-72-72s-72 32.2-72 72s32.2 72 72 72z"/>
+        </svg>
+        <input formControlName="titular" type="text" class="form-control" placeholder="Titular">
+      </div>
+
+      <div class="input-group mb-3">
+        <svg [class.green-icon]="this.form.get('numeroTarjeta')?.valid"
+             [class.red-icon]="this.form.get('numeroTarjeta')?.invalid"
+             class="input-group-text svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+          <path
+            d="M64 32C28.7 32 0 60.7 0 96v32H576V96c0-35.3-28.7-64-64-64H64zM576 224H0V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V224zM112 352h64c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16zm112 16c0-8.8 7.2-16 16-16H368c8.8 0 16 7.2 16 16s-7.2 16-16 16H240c-8.8 0-16-7.2-16-16z"/>
+        </svg>
+        <input formControlName="numeroTarjeta" type="text" class="form-control"
+               placeholder="Numero Tarjeta" maxlength="16">
+      </div>
+
+      <div class="row">
+        <div class="col-12 col-md-7">
+          <div class="input-group mb-3">
+            <svg [class.green-icon]="this.form.get('fechaExpiracion')?.valid"
+                 [class.red-icon]="this.form.get('fechaExpiracion')?.invalid"
+                 class="input-group-text svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+              <path
+                d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zm64 80v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16zm128 0v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H208c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H336zM64 400v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H208zm112 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H336c-8.8 0-16 7.2-16 16z"/>
+            </svg>
+            <input formControlName="fechaExpiracion" type="text" class="form-control"
+                   placeholder="MM/YY" maxlength="5">
+          </div>
+        </div>
+        <div class=" col-12 col-md-5">
+            <div class="input-group mb-3">
+              <svg [class.green-icon]="this.form.get('cvv')?.valid"
+                   [class.red-icon]="this.form.get('cvv')?.invalid"
+                   class="input-group-text svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path
+                  d="M336 352c97.2 0 176-78.8 176-176S433.2 0 336 0S160 78.8 160 176c0 18.7 2.9 36.8 8.3 53.7L7 391c-4.5 4.5-7 10.6-7 17v80c0 13.3 10.7 24 24 24h80c13.3 0 24-10.7 24-24V448h40c13.3 0 24-10.7 24-24V384h40c6.4 0 12.5-2.5 17-7l33.3-33.3c16.9 5.4 35 8.3 53.7 8.3zm40-176c-22.1 0-40-17.9-40-40s17.9-40 40-40s40 17.9 40 40s-17.9 40-40 40z"/>
+              </svg>
+              <input formControlName="cvv" type="password" class="form-control" placeholder="CVV" maxlength="3">
+          </div>
+        </div>
+      </div>
+
+      <div class=" d-grid gap-2">
+              <button [disabled]="form.invalid" class="btn btn-success btn-lg" type="submit">
+                <svg class="svgButton" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                  <path
+                    d="M448 80v48c0 44.2-100.3 80-224 80S0 172.2 0 128V80C0 35.8 100.3 0 224 0S448 35.8 448 80zM393.2 214.7c20.8-7.4 39.9-16.9 54.8-28.6V288c0 44.2-100.3 80-224 80S0 332.2 0 288V186.1c14.9 11.8 34 21.2 54.8 28.6C99.7 230.7 159.5 240 224 240s124.3-9.3 169.2-25.3zM0 346.1c14.9 11.8 34 21.2 54.8 28.6C99.7 390.7 159.5 400 224 400s124.3-9.3 169.2-25.3c20.8-7.4 39.9-16.9 54.8-28.6V432c0 44.2-100.3 80-224 80S0 476.2 0 432V346.1z"/>
+                </svg>
+                Aceptar
+              </button>
+            </div>
+    </form>
+  </div>
+</div>

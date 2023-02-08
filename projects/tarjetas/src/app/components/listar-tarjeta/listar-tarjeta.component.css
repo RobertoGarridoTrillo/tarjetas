@@ -1,0 +1,11 @@
+.pen {
+  width: 14px;
+  fill: #90ced9;
+  cursor: pointer;
+}
+
+.trash {
+  width: 14px;
+  fill: #c1777b;
+  cursor: pointer;
+}
